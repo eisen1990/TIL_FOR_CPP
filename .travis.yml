@@ -1,0 +1,27 @@
+language: cpp
+compiler:
+  - gcc
+os:
+  - linux
+
+env:
+  matrix:
+    - CXX		    := g++
+    - CXX_FLAGS := -Wall -Wextra -std=c++11 -ggdb
+
+before_install:
+  - if [ "$CXX" == "clang++" ]; then export CXX="clang++" && bii cpp:build; fi
+  - if [ "$CXX" == "g++" ];     then export CXX="g++"     && bii cpp:build; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; sudo apt-get -y install libxml2-dev fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get update -qq; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get install -qq g++-$GCC_VERSION; fi
+
+script:
+  - make clean && make all
+
+addons:
+  apt:
+    update: true
+
+script:
+  - cmake 

@@ -1,0 +1,5 @@
+#vscode wsl2 compile environment
+.vscode/
+
+#binary ignore
+bin/
