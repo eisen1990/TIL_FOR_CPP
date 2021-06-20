@@ -5,12 +5,9 @@ os:
   - linux
 
 script:
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then make clean && make all fi
+  - make clean && make all
   - ./bin/main.out
 
 addons:
   apt:
     update: true
-
-script:
-  - cmake 
