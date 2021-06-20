@@ -13,12 +13,12 @@ EXECUTABLE	:= main
 all: $(BIN)/$(EXECUTABLE)
 
 run: clean all
-	 ./$(BIN)/$(EXECUTABLE)
+	 ./$(EXECUTABLE)
 #	clear
 # ./$(BIN)/$(EXECUTABLE)
 
 $(BIN)/$(EXECUTABLE): $(SRC)/*.cpp
-	$(CXX) $(CXX_FLAGS) -I$(INCLUDE) -L$(LIB) $^ -o $@ $(LIBRARIES)
+	$(CXX) $(CXX_FLAGS) -I$(INCLUDE) -L$(LIB) $^ -o $(EXECUTABLE) $(LIBRARIES)
 
 clean:
-	-rm $(BIN)/*
+	rm -f $(BIN)/*
