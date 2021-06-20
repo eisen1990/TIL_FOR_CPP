@@ -5,6 +5,7 @@ os:
   - linux
 
 script:
+  - mkdir bin
   - make clean && make all
   - ./bin/main.out
 
