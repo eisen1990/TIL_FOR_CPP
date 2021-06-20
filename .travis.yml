@@ -4,9 +4,11 @@ compiler:
 os:
   - linux
 
+before_script:
+  - mkdir -p ./bin
+
 script:
-  - mkdir bin
-  - make clean && make all
+  - make run
   - ./bin/main.out
 
 addons:
