@@ -13,6 +13,7 @@ EXECUTABLE	:= main
 all: $(BIN)/$(EXECUTABLE)
 
 run: clean all
+	 ./$(BIN)/$(EXECUTABLE)
 #	clear
 # ./$(BIN)/$(EXECUTABLE)
 
